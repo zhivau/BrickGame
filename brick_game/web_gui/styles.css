@@ -1,0 +1,76 @@
+html {
+    min-height: 100vh;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#game-container {
+    display: none;
+    gap: 20px;
+}
+
+#side-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 200px;
+}
+
+#next-board {
+  display: none;
+  flex-wrap: wrap;
+  gap: var(--game-board-gap); /* Используем тот же отступ */
+  background: var(--next-board-background, #444); /* Цвет фона */
+  padding: var(--game-board-gap); /* Отступы */
+  width: calc(
+      (var(--tile-size) + var(--game-board-gap)) * var(--next-board-width) -
+          var(--game-board-gap)
+  );
+  height: calc(
+      (var(--tile-size) + var(--game-board-gap)) * var(--next-board-height) -
+          var(--game-board-gap)
+  );
+}
+
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--game-board-gap);
+    background: var(--game-board-background);
+    padding: var(--game-board-gap);
+    width: calc(
+        (var(--tile-size) + var(--game-board-gap)) * var(--game-board-width) -
+            var(--game-board-gap)
+    );
+    height: calc(
+      (var(--tile-size) + var(--game-board-gap)) * var(--game-board-height) -
+          var(--game-board-gap)
+    );
+}
+
+.tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+    background: var(--tile-color);
+}
+
+.active {
+    background: var(--tile-active-color);
+}
+
+.dashboard-text {
+    font-size: 2rem;
+}
